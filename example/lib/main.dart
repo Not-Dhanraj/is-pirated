@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  IsPirated isPirated;
+  IsPirated? isPirated;
 
   @override
   void initState() {
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    IsPirated isPirated;
+    IsPirated? isPirated;
     try {
       isPirated = await getIsPirated(debugOverride: false);
 
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
 
     if (!mounted) return;
 
-    setState(() => this.isPirated = isPirated);
+    setState(() => this.isPirated = isPirated!);
   }
 
   @override
